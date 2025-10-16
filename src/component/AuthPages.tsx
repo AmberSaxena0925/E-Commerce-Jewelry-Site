@@ -22,7 +22,7 @@ const AnimatedCard = styled.div`
   border-radius: 1rem;
   padding: 2rem;
   background: linear-gradient(to bottom, #0b0b0b, #121212);
-  border: 1px solid rgba(255, 215, 0, 0.1);
+  border: 1px solid rgba(203, 203, 203, 0.1);
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
   animation: ${float} 400ms ease forwards paused;
 
@@ -36,8 +36,8 @@ const AnimatedCard = styled.div`
     height: 100%;
     width: 100%;
     transform: scale(0.8);
-    filter: blur(25px);
-    background: linear-gradient(90deg, rgba(255, 215, 0, 0.25), rgba(255, 240, 180, 0.3));
+    filter: blur(35px);
+    background: linear-gradient(90deg, rgba(79, 79, 79, 0.25), rgba(243, 243, 243, 0.32));
     transition: opacity 0.5s;
     transform-origin: center;
     animation: ${glowPulse} 2.8s ease-in-out infinite paused;
@@ -46,7 +46,7 @@ const AnimatedCard = styled.div`
 
   &:hover {
     animation-play-state: running;
-    box-shadow: 0 20px 50px rgba(255, 215, 0, 0.2);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 1);
   }
 
   &:hover::after {
@@ -147,11 +147,18 @@ export const AuthPages = {
     const [name, setName] = React.useState("");
     const [email, setEmail] = React.useState("");
     const [password, setPassword] = React.useState("");
+    const [confirmPassword, setConfirmPassword] = React.useState(""); // ✅ Confirm Password
     const [loading, setLoading] = React.useState(false);
     const navigate = useNavigate();
 
     function handleSubmit(e: React.FormEvent) {
       e.preventDefault();
+
+      if (password !== confirmPassword) {
+        alert("Passwords do not match!");
+        return;
+      }
+
       setLoading(true);
       setTimeout(() => {
         setLoading(false);
@@ -205,6 +212,18 @@ export const AuthPages = {
                   type="password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
+                  className="mt-1 w-full rounded-md bg-black border border-yellow-400/20 px-3 py-2 outline-none text-gray-100"
+                />
+              </div>
+
+              {/* ✅ Confirm Password */}
+              <div>
+                <label className="text-sm text-gray-400">Confirm Password</label>
+                <input
+                  required
+                  type="password"
+                  value={confirmPassword}
+                  onChange={(e) => setConfirmPassword(e.target.value)}
                   className="mt-1 w-full rounded-md bg-black border border-yellow-400/20 px-3 py-2 outline-none text-gray-100"
                 />
               </div>
