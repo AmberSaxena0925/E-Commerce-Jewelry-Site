@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Ensure full-height layout */
+html, body, #root {
+  height: 100%;
+}
+
+/* Body styles with Tailwind font and colors */
+body {
+  @apply font-sans bg-black text-gray-100;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Small utility for card component */
+.card {
+  @apply bg-white dark:bg-gray-800 rounded-2xl shadow-sm overflow-hidden transition-shadow hover:shadow-md;
+}
+.card-header {
+  @apply bg-gray-100 dark:bg-gray-700 p-4 border-b border-gray-200 dark:border-gray-600;
+}

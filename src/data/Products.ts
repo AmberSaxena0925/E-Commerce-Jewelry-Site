@@ -1,0 +1,147 @@
+// src/data/products.ts
+
+export type Product = {
+  id: string;
+  title: string;
+  vendor: string;
+  price: number;
+  compareAt?: number;
+  description: string;
+  images: string[];
+  category: string;
+  sku: string;
+};
+
+// Product data
+export const products: Product[] = [
+  {
+    id: 'p1',
+    title: 'CLASSIC PEARL STUDS (92.5 SILVER)',
+    vendor: 'Sai Naman Pearls',
+    price: 899,
+    compareAt: 1499,
+    description: 'Elegant 92.5 silver pearl studs for timeless beauty.',
+    images: ['/images/p1-1.jpg'],
+    category: 'Earrings',
+    sku: 'SN-ER-001',
+  },
+  {
+    id: 'p2',
+    title: 'MAHARANI PEARL STUDS (92.5 SILVER GOLD PLATED)',
+    vendor: 'Sai Naman Pearls',
+    price: 999,
+    compareAt: 1699,
+    description: 'Regal pearl studs plated with 92.5 silver and gold finish.',
+    images: ['/images/p2-1.jpg'],
+    category: 'Earrings',
+    sku: 'SN-ER-002',
+  },
+  {
+    id: 'p3',
+    title: 'REAL PEARL JHUMKA (925 SILVER GOLD PLATED)',
+    vendor: 'Sai Naman Pearls',
+    price: 999,
+    description: 'Traditional jhumka with real pearl drops.',
+    images: ['/images/p3-1.jpg'],
+    category: 'Earrings',
+    sku: 'SN-ER-003',
+  },
+  {
+    id: 'p4',
+    title: '18 MOTI MALA',
+    vendor: 'Sai Naman Pearls',
+    price: 1699,
+    compareAt: 3400,
+    description: 'Beautiful 18-pearl mala for special occasions.',
+    images: ['/images/p4-1.jpg'],
+    category: 'Necklaces',
+    sku: 'SN-NE-001',
+  },
+  {
+    id: 'p5',
+    title: 'ROSE GOLD PEARL CHAIN',
+    vendor: 'Sai Naman Pearls',
+    price: 1599,
+    compareAt: 2999,
+    description: 'Delicate rose gold chain adorned with freshwater pearls.',
+    images: ['/images/p5-1.jpg'],
+    category: 'Necklaces',
+    sku: 'SN-NE-002',
+  },
+  {
+    id: 'p6',
+    title: 'PEARL DROP PENDANT SET',
+    vendor: 'Sai Naman Pearls',
+    price: 1399,
+    compareAt: 2499,
+    description: 'Elegant pendant set with matching earrings.',
+    images: ['/images/p6-1.jpg'],
+    category: 'Sets',
+    sku: 'SN-ST-001',
+  },
+  {
+    id: 'p7',
+    title: 'CLASSIC WHITE PEARL BRACELET',
+    vendor: 'Sai Naman Pearls',
+    price: 799,
+    compareAt: 1299,
+    description: 'Timeless white pearl bracelet for everyday elegance.',
+    images: ['/images/p7-1.jpg'],
+    category: 'Bracelets',
+    sku: 'SN-BR-001',
+  },
+  {
+    id: 'p8',
+    title: 'GOLD PLATED PEARL HOOPS',
+    vendor: 'Sai Naman Pearls',
+    price: 1099,
+    compareAt: 1999,
+    description: 'Chic hoops with delicate pearls and gold plating.',
+    images: ['/images/p8-1.jpg'],
+    category: 'Earrings',
+    sku: 'SN-ER-004',
+  },
+  {
+    id: 'p9',
+    title: 'ROYAL BLUE PEARL CHOKER',
+    vendor: 'Sai Naman Pearls',
+    price: 1899,
+    compareAt: 2999,
+    description: 'Statement choker featuring royal blue pearls.',
+    images: ['/images/p9-1.jpg'],
+    category: 'Necklaces',
+    sku: 'SN-NE-003',
+  },
+  {
+    id: 'p10',
+    title: 'SILVER PEARL BANGLE',
+    vendor: 'Sai Naman Pearls',
+    price: 1299,
+    compareAt: 1899,
+    description: 'Silver bangle with embedded lustrous pearls.',
+    images: ['/images/p10-1.jpg'],
+    category: 'Bracelets',
+    sku: 'SN-BR-002',
+  },
+  {
+    id: 'p11',
+    title: 'PEARL CASCADE NECKLACE',
+    vendor: 'Sai Naman Pearls',
+    price: 2399,
+    compareAt: 3799,
+    description: 'Multi-layered pearl necklace perfect for grand occasions.',
+    images: ['/images/p11-1.jpg'],
+    category: 'Necklaces',
+    sku: 'SN-NE-004',
+  },
+  {
+    id: 'p12',
+    title: 'MINIMALIST PEARL CHAIN',
+    vendor: 'Sai Naman Pearls',
+    price: 999,
+    description: 'Simple and elegant chain for daily wear.',
+    images: ['/images/p12-1.jpg'],
+    category: 'Necklaces',
+    sku: 'SN-NE-005',
+  },
+];
