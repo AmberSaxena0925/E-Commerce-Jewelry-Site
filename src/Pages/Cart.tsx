@@ -21,7 +21,7 @@ export default function Cart() {
   };
 
   return (
-    <main className="max-w-4xl mx-auto px-4 py-12">
+    <main className="max-w-7xl mx-auto px-4 py-12 pt-32">
       <h1 className="text-2xl md:text-3xl font-semibold text-gray-900 dark:text-gray-100">Your Cart</h1>
 
       <div className="mt-6 space-y-4">

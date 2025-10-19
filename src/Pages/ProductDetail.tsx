@@ -31,7 +31,7 @@ export default function ProductDetail() {
             src={product.images?.[0] || "/placeholder.jpg"}
             alt={product.title}
             className="w-full object-contain rounded-lg"
-          />
+            />
           <div className="mt-4 text-center text-2xl font-serif italic text-gray-200">
             {product.vendor}
           </div>
@@ -88,7 +88,7 @@ export default function ProductDetail() {
           <button
             onClick={() => cart.addToCart(product, quantity)}
             className="w-full py-3 border border-white rounded-full hover:bg-white hover:text-black transition"
-          >
+            >
             Add to cart
           </button>
           <button className="w-full py-3 bg-white text-black rounded-full hover:bg-gray-200 transition">
