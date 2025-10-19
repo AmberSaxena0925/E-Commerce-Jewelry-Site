@@ -1,22 +1,39 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
+const images = [
+  'https://images.pexels.com/photos/338504/pexels-photo-338504.jpeg',
+  'https://images.pexels.com/photos/355948/pexels-photo-355948.jpeg',
+  'https://images.pexels.com/photos/414171/pexels-photo-414171.jpeg',
+  'https://images.pexels.com/photos/325185/pexels-photo-325185.jpeg',
+];
 export default function Hero(): JSX.Element {
-  return (
-    <section
-      aria-label="Hero"
-      className="relative min-h-[60vh] md:min-h-[72vh] lg:min-h-[80vh] bg-gray-900"
-      style={{
-        backgroundImage:
-          "linear-gradient(180deg, rgba(0, 0, 0, 0.74), rgba(0, 0, 0, 0.97)), url('/images/hero.jpg')",
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-      }}
-    >
-      {/* Overlay for extra contrast on small/old browsers */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/40 pointer-events-none" />
+  const [currentIndex, setCurrentIndex] = useState(0);
 
-      <div className="relative z-10 max-w-6xl mx-auto px-6 sm:px-8 lg:px-12 py-20 md:py-28 flex items-center">
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % images.length);
+    }, 4000); // Change every 4 seconds
+
+    return () => clearInterval(interval);
+  }, []);
+
+  return ( <section className="relative h-screen" aria-label="Hero">
+      {/* Background images */}
+      {images.map((img, index) => (
+        <div
+          key={index}
+          className={`absolute inset-0 w-full h-full bg-center bg-cover transition-opacity duration-1000 ${
+            index === currentIndex ? 'opacity-100 z-10' : 'opacity-0 z-0'
+          }`}
+          style={{
+            backgroundImage: `linear-gradient(180deg, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0.27)), url(${img})`,
+          }}
+        />
+      ))}
+
+      <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/40 pointer-events-none" />
+<div className="relative z-20 max-w-6xl mx-auto px-6 sm:px-8 lg:px-12 py-20 md:py-28 flex items-center">
         <div className="w-full text-center md:text-left">
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-extrabold leading-tight text-white">
             STAY STYLISH WITH OUR NEWEST COLLECTION.
@@ -45,7 +62,6 @@ export default function Hero(): JSX.Element {
             </Link>
           </div>
 
-          {/* Small decorative text for mobile */}
           <div className="mt-6 text-xs text-gray-300 uppercase tracking-wide hidden sm:block">
             Free delivery across India • Guarantee certificate with every pearl
           </div>
