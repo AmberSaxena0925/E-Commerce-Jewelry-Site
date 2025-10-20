@@ -14,7 +14,7 @@ import Signup from "./Pages/Signup";
 import { CartProvider } from "./context/CartContext";
 
 export default function App(): JSX.Element {
-  const location = useLocation(); // ✅ must be inside BrowserRouter
+  const location = useLocation(); 
 
   const noFooterRoutes = ["/login", "/signup"];
   const hideFooter = noFooterRoutes.includes(location.pathname);

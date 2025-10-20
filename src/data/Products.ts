@@ -10,9 +10,9 @@ export type Product = {
   images: string[];
   category: string;
   sku: string;
+  isBestSeller?: boolean;
 };
 
-// Product data
 export const products: Product[] = [
   {
     id: 'p1',
@@ -24,6 +24,7 @@ export const products: Product[] = [
     images: ['/images/p1-1.jpg'],
     category: 'Earrings',
     sku: 'SN-ER-001',
+    isBestSeller: true,
   },
   {
     id: 'p2',
@@ -35,6 +36,7 @@ export const products: Product[] = [
     images: ['/images/p2-1.jpg'],
     category: 'Earrings',
     sku: 'SN-ER-002',
+    isBestSeller: true,
   },
   {
     id: 'p3',
@@ -45,6 +47,7 @@ export const products: Product[] = [
     images: ['/images/p3-1.jpg'],
     category: 'Earrings',
     sku: 'SN-ER-003',
+    isBestSeller: false,
   },
   {
     id: 'p4',
@@ -56,6 +59,7 @@ export const products: Product[] = [
     images: ['/images/p4-1.jpg'],
     category: 'Necklaces',
     sku: 'SN-NE-001',
+    isBestSeller: true,
   },
   {
     id: 'p5',
@@ -67,6 +71,7 @@ export const products: Product[] = [
     images: ['/images/p5-1.jpg'],
     category: 'Necklaces',
     sku: 'SN-NE-002',
+    isBestSeller: false,
   },
   {
     id: 'p6',
@@ -78,6 +83,7 @@ export const products: Product[] = [
     images: ['/images/p6-1.jpg'],
     category: 'Sets',
     sku: 'SN-ST-001',
+    isBestSeller: true,
   },
   {
     id: 'p7',
@@ -89,6 +95,7 @@ export const products: Product[] = [
     images: ['/images/p7-1.jpg'],
     category: 'Bracelets',
     sku: 'SN-BR-001',
+    isBestSeller: false,
   },
   {
     id: 'p8',
@@ -100,6 +107,7 @@ export const products: Product[] = [
     images: ['/images/p8-1.jpg'],
     category: 'Earrings',
     sku: 'SN-ER-004',
+    isBestSeller: true,
   },
   {
     id: 'p9',
@@ -111,6 +119,7 @@ export const products: Product[] = [
     images: ['/images/p9-1.jpg'],
     category: 'Necklaces',
     sku: 'SN-NE-003',
+    isBestSeller: false,
   },
   {
     id: 'p10',
@@ -122,6 +131,7 @@ export const products: Product[] = [
     images: ['/images/p10-1.jpg'],
     category: 'Bracelets',
     sku: 'SN-BR-002',
+    isBestSeller: true,
   },
   {
     id: 'p11',
@@ -133,6 +143,7 @@ export const products: Product[] = [
     images: ['/images/p11-1.jpg'],
     category: 'Necklaces',
     sku: 'SN-NE-004',
+    isBestSeller: true,
   },
   {
     id: 'p12',
@@ -143,5 +154,6 @@ export const products: Product[] = [
     images: ['/images/p12-1.jpg'],
     category: 'Necklaces',
     sku: 'SN-NE-005',
+    isBestSeller: false,
   },
 ];
