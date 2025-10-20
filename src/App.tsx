@@ -2,12 +2,13 @@ import React from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import Header from "./component/Header";
 import Footer from "./component/Footer";
-import Home from "./pages/Home";
-import Catalog from "./pages/Catalog";
-import ProductPage from "./pages/ProductPage";
-import Cart from "./pages/Cart";
-import Checkout from "./pages/Checkout";
-import Orders from "./pages/Orders";
+import Contact from "./Pages/Contact";
+import Home from "./Pages/Home";
+import Catalog from "./Pages/Catalog";
+import ProductPage from "./Pages/ProductPage";
+import Cart from "./Pages/Cart";
+import Checkout from "./Pages/Checkout";
+import Orders from "./Pages/Orders";
 import Login from "./Pages/Login";
 import Signup from "./Pages/Signup";
 import { CartProvider } from "./context/CartContext";
@@ -33,6 +34,7 @@ export default function App(): JSX.Element {
             <Route path="/orders" element={<Orders />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
+            <Route path="/contact" element={<Contact />} />
           </Routes>
         </main>
 

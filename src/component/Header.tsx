@@ -64,7 +64,7 @@ const Header: React.FC<HeaderProps> = ({ count = 0 }) => {
           <Link to="/orders" className={`mx-3 ${textClass} hover:text-blue-600 transition-colors`}>
             Orders
           </Link>
-          <Link to="/contact" className={`mx-3 ${textClass} hover:text-blue-600 transition-colors`}>
+          <Link to="/Contact" className={`mx-3 ${textClass} hover:text-blue-600 transition-colors`}>
             Contact
           </Link>
 
@@ -87,13 +87,13 @@ const Header: React.FC<HeaderProps> = ({ count = 0 }) => {
           <Link to="/account" className={`mx-3 flex items-center ${textClass} hover:text-blue-600`}>
             <User className={`h-4 w-4 mr-2 ${textClass}`} />
           </Link>
-
-          <button
-            onClick={handleSignIn}
-            className={`mx-3 ${textClass} hover:text-blue-600 transition-colors`}
+          
+          <Link
+            to="/login"
+            className="mx-3 ${textClass} hover:text-blue-600 transition-colors"
           >
             Login
-          </button>
+          </Link>
 
           <Link
             to="/signup"

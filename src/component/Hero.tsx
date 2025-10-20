@@ -19,7 +19,6 @@ export default function Hero(): JSX.Element {
   }, []);
 
   return ( <section className="relative h-screen" aria-label="Hero">
-      {/* Background images */}
       {images.map((img, index) => (
         <div
           key={index}

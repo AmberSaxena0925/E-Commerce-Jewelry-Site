@@ -78,7 +78,7 @@ export const AuthPages = {
     }
 
     return (
-      <div className="min-h-[80vh] flex items-center justify-center bg-gradient-to-b from-gray-950 via-black to-gray-900 text-white">
+      <div className="min-h-[80vh] flex items-center justify-center bg-gradient-to-b from-gray-950 via-black to-gray-900 text-white     px-4 py-12 pt-32">
         <div className="w-full max-w-md">
           <AnimatedCard>
             <button onClick={() => navigate("/")} className="text-sm text-gray-400 mb-4">
@@ -168,7 +168,7 @@ export const AuthPages = {
     }
 
     return (
-      <div className="min-h-[80vh] flex items-center justify-center bg-gradient-to-b from-gray-950 via-black to-gray-900 text-white">
+      <div className="min-h-[80vh] flex items-center justify-center bg-gradient-to-b from-gray-950 via-black to-gray-900 text-white px-4 py-12 pt-32">
         <div className="w-full max-w-md">
           <AnimatedCard>
             <button onClick={() => navigate("/")} className="text-sm text-gray-400 mb-4">
