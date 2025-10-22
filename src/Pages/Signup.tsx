@@ -1,5 +1,5 @@
 import React from "react";
-import { AuthPages } from "../component/AuthPages"; // adjust path if needed
+import { AuthPages } from "../component/AuthPages"; 
 
 export default function Signup() {
   const [showLogin, setShowLogin] = React.useState(false);

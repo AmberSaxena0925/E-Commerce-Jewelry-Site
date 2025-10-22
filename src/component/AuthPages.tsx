@@ -2,7 +2,6 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import styled, { keyframes } from "styled-components";
 
-// ✨ Floating and glowing animations
 const float = keyframes`
   0% { transform: translateY(0) scale(1); }
   100% { transform: translateY(-8px) scale(1.03); }
@@ -14,45 +13,16 @@ const glowPulse = keyframes`
   100% { transform: scale(0.8); filter: blur(20px); opacity: 1; }
 `;
 
-// ✨ Card styling — sleek and golden
 const AnimatedCard = styled.div`
-  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   z-index: 1;
   width: 100%;
   border-radius: 1rem;
   padding: 2rem;
-  background: linear-gradient(to bottom, #0b0b0b, #121212);
-  border: 1px solid rgba(203, 203, 203, 0.1);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
-  animation: ${float} 400ms ease forwards paused;
 
-  &::after {
-    content: "";
-    position: absolute;
-    top: 28px;
-    left: 0;
-    right: 0;
-    z-index: -1;
-    height: 100%;
-    width: 100%;
-    transform: scale(0.8);
-    filter: blur(35px);
-    background: linear-gradient(90deg, rgba(79, 79, 79, 0.25), rgba(243, 243, 243, 0.32));
-    transition: opacity 0.5s;
-    transform-origin: center;
-    animation: ${glowPulse} 2.8s ease-in-out infinite paused;
-    border-radius: inherit;
-  }
-
-  &:hover {
-    animation-play-state: running;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 1);
-  }
-
-  &:hover::after {
-    animation-play-state: running;
-    opacity: 1;
-  }
 
   @media (max-width: 420px) {
     padding: 1.25rem;
@@ -78,63 +48,58 @@ export const AuthPages = {
     }
 
     return (
-      <div className="min-h-[80vh] flex items-center justify-center bg-gradient-to-b from-gray-950 via-black to-gray-900 text-white     px-4 py-12 pt-32">
-        <div className="w-full max-w-md">
+      <div className="min-h-[80vh] flex items-center justify-center bg-white text-gray-800 px-4 py-12 pt-32">
+        <div className="flex justify-center w-full  max-w-md">
           <AnimatedCard>
-            <button onClick={() => navigate("/")} className="text-sm text-gray-400 mb-4">
-              ← Back to Home
-            </button>
+            <h1 className="nanum-myeongjo-regular font-light text-[3rem] text-[#002642] mb-12">
+  Login
+</h1>
 
-            <h2 className="text-3xl font-serif font-bold text-yellow-400">Sign In</h2>
-            <p className="text-gray-300 mt-2">
-              Welcome back — step into elegance with your account.
-            </p>
 
-            <form onSubmit={handleSubmit} className="mt-6 space-y-4">
-              <div>
-                <label className="text-sm text-gray-400">Email</label>
-                <input
-                  required
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  className="mt-1 w-full rounded-md bg-black border border-yellow-400/20 px-3 py-2 outline-none text-gray-100"
-                />
-              </div>
+            <form onSubmit={handleSubmit} className="w-[120%] flex flex-col space-y-6">
+<div className="flex flex-col">
+  <input
+    required
+    type="email"
+    value={email}
+    onChange={(e) => setEmail(e.target.value)}
+    className="w-full p-3 border border-gray-200 rounded-sm focus:outline-none focus:border-[#002742a2] hover:border-gray-300 font-serif shadow-md hover:shadow-lg transition-all placeholder:text-gray-500"
+    placeholder="Email"
+  />
+</div>
 
-              <div>
-                <label className="text-sm text-gray-400">Password</label>
-                <input
-                  required
-                  type="password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  className="mt-1 w-full rounded-md bg-black border border-yellow-400/20 px-3 py-2 outline-none text-gray-100"
-                />
-              </div>
+<div className="flex flex-col">
+  <input
+    required
+    type="password"
+    value={password}
+    onChange={(e) => setPassword(e.target.value)}
+    className="w-full p-3 border border-gray-200 rounded-sm focus:outline-none focus:border-[#002742a1] hover:border-gray-300 font-serif shadow-md hover:shadow-lg transition-all  placeholder:text-gray-500"
+    placeholder="Password"
+  />
+</div>
 
-              <div className="flex items-center justify-between text-sm text-gray-400">
-                <label>
-                  <input type="checkbox" className="mr-2" /> Remember me
-                </label>
-                <button type="button" className="underline hover:text-yellow-400">
-                  Forgot?
+
+              <div className="flex justify-start">
+                <button type="button" className="text-[#002642] hover:underline text-sm font-extralight" >
+                  Forgot your password?
                 </button>
               </div>
 
-              <button
-                disabled={loading}
-                type="submit"
-                className="w-full py-2 rounded-md bg-yellow-400 text-black font-medium hover:bg-yellow-300 transition-all"
-              >
-                {loading ? "Signing in..." : "Sign In"}
-              </button>
+              <div className="flex justify-center w-full">
+                <button
+                  disabled={loading}
+                  type="submit"
+                  className="w-[27%] py-3 px-6 bg-[#1A3C5A] text-white rounded-full font-serif hover:bg-[#003666] transition-all text-center"
+                >
+                  {loading ? "Signing in..." : "Sign in"}
+                </button>
+              </div>
             </form>
 
-            <div className="mt-6 text-center text-gray-300">
-              Don’t have an account?{" "}
-              <button onClick={onSwitchToSignup} className="underline text-yellow-400">
-                Sign Up
+            <div className="mt-6 text-center">
+              <button onClick={onSwitchToSignup} className="text-[#002642] underline font-extralight text-sm">
+                Create account
               </button>
             </div>
           </AnimatedCard>
@@ -168,79 +133,71 @@ export const AuthPages = {
     }
 
     return (
-      <div className="min-h-[80vh] flex items-center justify-center bg-gradient-to-b from-gray-950 via-black to-gray-900 text-white px-4 py-12 pt-32">
-        <div className="w-full max-w-md">
+      <div className="min-h-[80vh] flex items-center justify-center bg-white text-gray-800 px-4 py-12 pt-32">
+        <div className="flex justify-center w-full max-w-md">
           <AnimatedCard>
-            <button onClick={() => navigate("/")} className="text-sm text-gray-400 mb-4">
-              ← Back to Home
-            </button>
+            <h1 className="nanum-myeongjo-regular font-light text-[3rem] text-[#002642] mb-12">
+              Create Account
+            </h1>
 
-            <h2 className="text-3xl font-serif font-bold text-yellow-400">
-              Create an Account
-            </h2>
-            <p className="text-gray-300 mt-2">
-              Join <span className="text-yellow-400">Sai Naman Pearls</span> for exclusive
-              offers and a seamless experience.
-            </p>
-
-            <form onSubmit={handleSubmit} className="mt-6 space-y-4">
-              <div>
-                <label className="text-sm text-gray-400">Full Name</label>
+            <form onSubmit={handleSubmit} className="w-[120%] flex flex-col space-y-6">
+              <div className="flex flex-col">
                 <input
                   required
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  className="mt-1 w-full rounded-md bg-black border border-yellow-400/20 px-3 py-2 outline-none text-gray-100"
+                  className="w-full p-2.5 border border-gray-200 rounded-sm focus:outline-none focus:border-[#002742a2] hover:border-gray-300 font-serif shadow-md hover:shadow-lg transition-all placeholder:text-gray-500"
+                  placeholder="Full Name"
                 />
               </div>
 
-              <div>
-                <label className="text-sm text-gray-400">Email</label>
+              <div className="flex flex-col">
                 <input
                   required
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="mt-1 w-full rounded-md bg-black border border-yellow-400/20 px-3 py-2 outline-none text-gray-100"
+                  className="w-full p-2.5 border border-gray-200 rounded-sm focus:outline-none focus:border-[#002742a2] hover:border-gray-300 font-serif shadow-md hover:shadow-lg transition-all placeholder:text-gray-500"
+                  placeholder="Email"
                 />
               </div>
 
-              <div>
-                <label className="text-sm text-gray-400">Password</label>
+              <div className="flex flex-col">
                 <input
                   required
                   type="password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="mt-1 w-full rounded-md bg-black border border-yellow-400/20 px-3 py-2 outline-none text-gray-100"
+                  className="w-full p-2.5 border border-gray-200 rounded-sm focus:outline-none focus:border-[#002742a2] hover:border-gray-300 font-serif shadow-md hover:shadow-lg transition-all placeholder:text-gray-500"
+                  placeholder="Password"
                 />
               </div>
 
-              {/* ✅ Confirm Password */}
-              <div>
-                <label className="text-sm text-gray-400">Confirm Password</label>
+              <div className="flex flex-col">
                 <input
                   required
                   type="password"
                   value={confirmPassword}
                   onChange={(e) => setConfirmPassword(e.target.value)}
-                  className="mt-1 w-full rounded-md bg-black border border-yellow-400/20 px-3 py-2 outline-none text-gray-100"
+                  className="w-full p-2.5 border border-gray-200 rounded-sm focus:outline-none focus:border-[#002742a2] hover:border-gray-300 font-serif shadow-md hover:shadow-lg transition-all placeholder:text-gray-500"
+                  placeholder="Confirm Password"
                 />
               </div>
 
-              <button
-                disabled={loading}
-                type="submit"
-                className="w-full py-2 rounded-md bg-yellow-400 text-black font-medium hover:bg-yellow-300 transition-all"
-              >
-                {loading ? "Creating..." : "Create Account"}
-              </button>
+              <div className="flex justify-center w-full">
+                <button
+                  disabled={loading}
+                  type="submit"
+                  className="w-1/3 py-3 px-6 bg-[#002642] text-white rounded-full font-serif hover:bg-[#003666] transition-all text-center"
+                >
+                  {loading ? "Creating..." : "Sign up"}
+                </button>
+              </div>
             </form>
 
-            <div className="mt-6 text-center text-gray-300">
-              Already have an account?{" "}
-              <button onClick={onSwitchToLogin} className="underline text-yellow-400">
-                Sign In
+            <div className="mt-6 text-center">
+              <button onClick={onSwitchToLogin} className="text-[#002642] underline font-extralight text-sm">
+                Already have an account?
               </button>
             </div>
           </AnimatedCard>

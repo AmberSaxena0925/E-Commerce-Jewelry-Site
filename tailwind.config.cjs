@@ -15,3 +15,13 @@ sans: ['Inter', 'sans-serif']
 plugins: []
 }
 
+// tailwind.config.js
+export default {
+  theme: {
+    extend: {
+      fontFamily: {
+        playfair: ['"Playfair Display"', 'serif'],
+      },
+    },
+  },
+};
